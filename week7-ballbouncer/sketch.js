@@ -4,7 +4,7 @@ let ball0;
 function setup() {
     createCanvas(canvasSize[0], canvasSize[1]);
 
-    ball0 = new ball(width / 2, height / 2, 30, 'green', 5, 5);
+    ball0 = new Ball(width / 2, height / 2, 30, 'green', 5, 5);
 
 }
 
@@ -15,7 +15,7 @@ function draw() {
     ball0.move();
 }
 
-class ball {
+class Ball {
     constructor(x, y, radius, colour, speedx, speedy) {
         this.x = x;
         this.y = y;
