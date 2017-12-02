@@ -3,7 +3,7 @@ let message = "Happy Christmas Creators!"
 
 function setup(){
     createCanvas(innerWidth, innerHeight);
-    background(0);
+
     for(let i=0; i<300; i++){
         snowFlakes.push(new Snowflake(random(width), random(height), random(10,30)));
     }
@@ -11,7 +11,6 @@ function setup(){
 
 function draw(){
     background(0);
-
     // Draw Message
     stroke(255);
     strokeWeight(5);
@@ -21,8 +20,8 @@ function draw(){
     text(message, width/2, height/2);
 
     // Draw snowflakes
-    for(flake of snowFlakes){
-        flake.move();
-        flake.show();
+    for(let i=0; i<snowFlakes.length; i++){
+        snowFlakes[i].move();
+        snowFlakes[i].show();
     }
 }
