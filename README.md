@@ -1,6 +1,8 @@
 # Creators2017
 This repository keeps all the code created by the creators group in the 2017/2018 term.  In 2017, the Creators group was led by Kieran and Mark.
 
+Check out these examples running [on our Showcase website](https://coderdojoathenry.github.io/creators2017/)!!
+
 ## What is the Creators Group?
 The Creators group in Coderdojo Athenry works on **creative aspects** of coding - this means learning how to use code to build interesting art, simulations, games and random goofy stuff!  
 
