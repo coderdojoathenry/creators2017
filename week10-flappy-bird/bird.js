@@ -4,7 +4,7 @@ class Bird {
         this.y = y;
         this.size = size;
         this.speedY = 0;
-        this.jumpSpeed = -10;
+        this.jumpSpeed = -9;
     }
 
     flap(){
@@ -12,9 +12,11 @@ class Bird {
     }
 
     move(){
-        if(gameStarted==true && this.y < height - groundHeight) {
+        if(this.y < height - groundHeight) {
             this.speedY = this.speedY + GRAVITY;
             this.y = this.y + this.speedY;            
+        } else {
+            gameOver = true;
         }
     }
 
