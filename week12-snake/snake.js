@@ -8,6 +8,8 @@ class Snake {
         this.length = 7;
 
         this.direction = 0;
+
+        this.crashed = false;
     }
 
     show(){
@@ -21,12 +23,18 @@ class Snake {
     }
 
     move(){
+        if (this.crashed == true) {
+            return;
+        }
+
         if (this.positions.length >= this.length){
             this.positions.splice(0, 1);
         }
 
         this.updatePos();
         this.positions.push(this.pos.copy());
+
+        this.crashed = this.isCrashed();
     }
 
     updatePos(){
@@ -60,5 +68,23 @@ class Snake {
         else {
             this.direction--;
         }
+    }
+
+    isCrashed(){
+        // Check edge
+        if (this.pos.x < 0 || this.pos.x > width || 
+            this.pos.y < 0 || this.pos.y > height){
+            return true;
+        }
+
+        // Check if we've hit ourselves (but don't check against the 
+        // very last point which is the head itself)
+        for (let i = 0; i < this.positions.length - 1; i++){
+            if (this.positions[i].equals(this.pos)){
+                return true;
+            }
+        }
+
+        return false;
     }
 }

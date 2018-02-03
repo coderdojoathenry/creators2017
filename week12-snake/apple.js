@@ -17,7 +17,7 @@ class Apple{
 
     checkSnake(snake){
         if (snake.pos.equals(this.pos)){
-            snake.length++;
+            snake.length += 4;
             this.eaten = true;
         }
     }
