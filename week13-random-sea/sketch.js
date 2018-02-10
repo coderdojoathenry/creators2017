@@ -45,7 +45,7 @@ function draw(){
     noStroke();
     fill(255);
     textSize(20);
-    text("Speed: " + Math.round(xSpeed * 1000),10,30)
+    text("Speed: " + Math.round(xSpeed * 1000) + " (left or right to change)",10,30)
 }
 
 

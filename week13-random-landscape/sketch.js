@@ -11,12 +11,14 @@ function draw(){
     background(0);
     xStart = xStart + xSpeed;
     let xOff=xStart;
-    fill('blue')
+    fill(100)
+    stroke(255);
+    strokeWeight(5);
     beginShape();
     vertex(0, height);
     for(let x=0; x<width; x++){
         // Completely random
-        // let y = random(height*0.25, height * 0.75);                
+        //let y = random(height*0.25, height * 0.75);                
 
         // Gaussian Random - will tend to be in the center
         // let y = randomGaussian(height/2, 20); 
@@ -25,8 +27,6 @@ function draw(){
         let y = noise(xOff) * height/4 + height/2;
         xOff = xOff + 0.006;  
 
-        stroke('yellow');
-        strokeWeight(5);
         vertex(x,y);
     }
     vertex(width, height);    
