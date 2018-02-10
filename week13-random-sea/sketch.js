@@ -41,6 +41,11 @@ function draw(){
     if(keyIsDown(RIGHT_ARROW)){
         xSpeed = xSpeed + 0.001;
     }    
+
+    noStroke();
+    fill(255);
+    textSize(20);
+    text("Speed: " + Math.round(xSpeed * 1000),10,30)
 }
 
 
