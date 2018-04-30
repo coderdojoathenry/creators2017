@@ -1,37 +1,15 @@
 function setup(){
-    createCanvas(innerWidth, innerHeight, WEBGL);  
-    angleMode(DEGREES);
+    createCanvas(innerWidth, innerHeight);  
 }
 
 function draw(){
-    camera(0, -200, 700, 0, 0, 0, 0, 1, 0);    
-    background(75);
-    push();
-    noStroke();
-    rotateY(frameCount/2);    
-    translate(0, 0, 0);
+    background('lightblue');
+    drawFrog(width/2, height/2, 100, 200, 500);
+}
 
-    pointLight(255, 255, 255, 0, 0, 0);
-    pointLight(255, 255, 255, 0, 0, 0);
-    pointLight(255, 255, 255, 0, 0, 0);        
-    pointLight(255, 255, 255, 0, 0, 0);    
-    pointLight(255, 255, 255, 0, 0, 0);        
-    pointLight(255, 255, 255, 0, 0, 0);       
-
-    // draw sun
-    fill('yellow');
-    sphere(75);
-
-    // draw earth
-    translate(300, 0, 0);
-    push();
-    rotateY(frameCount * 6);    
-    specularMaterial('blue');   
-    sphere(30);
-    translate(50,0,0);
-    specularMaterial('white');   
-    sphere(10);    
-    pop();    
-    pop();
-
+function drawFrog(x, y, headHeight, bodyWidth, bodyHeight){
+    fill('green');
+    rectMode(CENTER);
+    rect(x, y, bodyWidth, bodyHeight);
+    ellipse(x, y-(bodyHeight/2 + headHeight/2), headHeight, headHeight);
 }
